@@ -32,20 +32,20 @@
     </nav>
     <div class="container flex-grow-1 flex-shrink-0 py-5">
       <div class="mb-5 p-4 bg-white shadow-sm">
-        <h3>Form validation</h3>
+        <h3>Create a new logslash task</h3>
         <div id="stepperForm" class="bs-stepper">
           <div class="bs-stepper-header" role="tablist">
             <div class="step" data-target="#test-form-1">
               <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger1" aria-controls="test-form-1">
                 <span class="bs-stepper-circle">1</span>
-                <span class="bs-stepper-label">Email</span>
+                <span class="bs-stepper-label">Data</span>
               </button>
             </div>
             <div class="bs-stepper-line"></div>
             <div class="step" data-target="#test-form-2">
               <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger2" aria-controls="test-form-2">
                 <span class="bs-stepper-circle">2</span>
-                <span class="bs-stepper-label">Password</span>
+                <span class="bs-stepper-label">Filter</span>
               </button>
             </div>
             <div class="bs-stepper-line"></div>
@@ -60,22 +60,30 @@
             <form class="needs-validation" onSubmit="return false" novalidate>
               <div id="test-form-1" role="tabpanel" class="bs-stepper-pane fade" aria-labelledby="stepperFormTrigger1">
                 <div class="form-group">
-                  <label for="inputMailForm">Email address <span class="text-danger font-weight-bold">*</span></label>
-                  <input id="inputMailForm" type="email" class="form-control" placeholder="Enter email" required>
-                  <div class="invalid-feedback">Please fill the email field</div>
+                  <label for="logSample">Please paste your log sample <span class="text-danger font-weight-bold">*</span></label>
+                  <textarea id="logSample" class="form-control" placeholder="" required></textarea>
+                  <div class="invalid-feedback">You can not start a new task without sample data</div>
                 </div>
+				<div class="form-check">
+                <input type="checkbox" class="form-check-input" id="filebeat" disabled
+                  placeholder="Not Implemented">
+                <label class="form-check-label" for="filebeat">Use Filebeat for shipping</label>
+              </div>
+			  <br>
                 <button class="btn btn-primary btn-next-form">Next</button>
               </div>
               <div id="test-form-2" role="tabpanel" class="bs-stepper-pane fade" aria-labelledby="stepperFormTrigger2">
                 <div class="form-group">
-                  <label for="inputPasswordForm">Password <span class="text-danger font-weight-bold">*</span></label>
-                  <input id="inputPasswordForm" type="password" class="form-control" placeholder="Password" required>
-                  <div class="invalid-feedback">Please fill the password field</div>
+                  <label for="pipelineSample">Paste your Logstash filter <span class="text-danger font-weight-bold">*</span></label>
+                  <textarea id="pipelineSample" class="form-control" placeholder="" required></textarea>
+                  <div class="invalid-feedback">It should start with "filter {"</div>
                 </div>
+				<button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
                 <button class="btn btn-primary btn-next-form">Next</button>
               </div>
               <div id="test-form-3" role="tabpanel" class="bs-stepper-pane fade text-center" aria-labelledby="stepperFormTrigger3">
-                <button type="submit" class="btn btn-primary mt-5">Submit</button>
+                <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
               </div>
             </form>
           </div>
