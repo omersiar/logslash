@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Test suite for Logstash">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bs-stepper.min.css">
+    <title>Logslash</title>
+  </head>
+  <body class="d-flex flex-column min-vh-100 bg-light">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark text-white">
+      <div class="container">
+        <h1 class="mb-0 h5 py-1 mr-3">Logslash Test Suite</h1>
+        <button class="navbar-toggler ml-3" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Documentation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Change log</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Download</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container flex-grow-1 flex-shrink-0 py-5">
+      <div class="mb-5 p-4 bg-white shadow-sm">
+        <h3>Form validation</h3>
+        <div id="stepperForm" class="bs-stepper">
+          <div class="bs-stepper-header" role="tablist">
+            <div class="step" data-target="#test-form-1">
+              <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger1" aria-controls="test-form-1">
+                <span class="bs-stepper-circle">1</span>
+                <span class="bs-stepper-label">Email</span>
+              </button>
+            </div>
+            <div class="bs-stepper-line"></div>
+            <div class="step" data-target="#test-form-2">
+              <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger2" aria-controls="test-form-2">
+                <span class="bs-stepper-circle">2</span>
+                <span class="bs-stepper-label">Password</span>
+              </button>
+            </div>
+            <div class="bs-stepper-line"></div>
+            <div class="step" data-target="#test-form-3">
+              <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger3" aria-controls="test-form-3">
+                <span class="bs-stepper-circle">3</span>
+                <span class="bs-stepper-label">Validate</span>
+              </button>
+            </div>
+          </div>
+          <div class="bs-stepper-content">
+            <form class="needs-validation" onSubmit="return false" novalidate>
+              <div id="test-form-1" role="tabpanel" class="bs-stepper-pane fade" aria-labelledby="stepperFormTrigger1">
+                <div class="form-group">
+                  <label for="inputMailForm">Email address <span class="text-danger font-weight-bold">*</span></label>
+                  <input id="inputMailForm" type="email" class="form-control" placeholder="Enter email" required>
+                  <div class="invalid-feedback">Please fill the email field</div>
+                </div>
+                <button class="btn btn-primary btn-next-form">Next</button>
+              </div>
+              <div id="test-form-2" role="tabpanel" class="bs-stepper-pane fade" aria-labelledby="stepperFormTrigger2">
+                <div class="form-group">
+                  <label for="inputPasswordForm">Password <span class="text-danger font-weight-bold">*</span></label>
+                  <input id="inputPasswordForm" type="password" class="form-control" placeholder="Password" required>
+                  <div class="invalid-feedback">Please fill the password field</div>
+                </div>
+                <button class="btn btn-primary btn-next-form">Next</button>
+              </div>
+              <div id="test-form-3" role="tabpanel" class="bs-stepper-pane fade text-center" aria-labelledby="stepperFormTrigger3">
+                <button type="submit" class="btn btn-primary mt-5">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="p-3 mt-auto bg-white shadow">
+      <div class="container">
+
+      </div>
+    </footer>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bs-stepper.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
